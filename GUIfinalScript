@@ -1,17 +1,11 @@
-button2.Font = Enum.Font.SourceSans
-button2.TextSize = 24
-button2.Parent = frame
-
--- Menambahkan Text untuk Credits
-local credits = Instance.new("TextLabel")
 credits.Name = "Credits"
 credits.Size = UDim2.new(1, 0, 0.1, 0)
 credits.Position = UDim2.new(0, 0, 0.8, 0)
 credits.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
 credits.TextColor3 = Color3.fromRGB(255, 255, 255)
-credits.Text = "Made By DoliScriptz"
 credits.Font = Enum.Font.SourceSans
 credits.TextSize = 18
+credits.Text = "Made By DoliScriptz"
 credits.Parent = frame
 
 -- Fungsi untuk membuat notifikasi
@@ -53,3 +47,7 @@ button2.MouseButton1Click:Connect(function()
 showNotification("Force Accept Executed")
 executeScript("https://raw.githubusercontent.com/DoliScriptz/TradeStart/main/Second")
 end)
+end
+
+-- Menjalankan fungsi untuk membuat GUI
+createGui()
